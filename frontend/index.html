@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Student Marks Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <h1>Student Marks Dashboard</h1>
+
+  <form id="studentForm">
+
+    <input
+      type="text"
+      id="name"
+      placeholder="Student Name"
+      required
+    >
+
+    <input
+      type="text"
+      id="subject"
+      placeholder="Subject"
+      required
+    >
+
+    <input
+      type="number"
+      id="marks"
+      placeholder="Marks"
+      required
+    >
+
+    <button type="submit">
+      Add Student
+    </button>
+
+  </form>
+
+  <canvas id="myChart"></canvas>
+  <h2>Student List</h2>
+
+<div id="studentList"></div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
