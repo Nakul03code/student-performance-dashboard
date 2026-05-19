@@ -25,9 +25,11 @@ async function loadChart() {
   }
 
   chart = new Chart(chartCanvas, {
+
     type: 'bar',
 
     data: {
+
       labels: labels,
 
       datasets: [
@@ -36,17 +38,51 @@ async function loadChart() {
 
           data: marks,
 
-          borderWidth: 1,
-
           backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
+            '#60a5fa',
+            '#f472b6',
+            '#34d399',
+            '#fbbf24',
+            '#a78bfa',
+            '#fb7185',
           ],
+
+          borderWidth: 1,
         },
       ],
+    },
+
+    options: {
+
+      responsive: true,
+
+      maintainAspectRatio: false,
+
+      scales: {
+
+        y: {
+          beginAtZero: true,
+
+          ticks: {
+            color: 'white',
+          },
+        },
+
+        x: {
+          ticks: {
+            color: 'white',
+          },
+        },
+      },
+
+      plugins: {
+
+        legend: {
+          labels: {
+            color: 'white',
+          },
+        },
+      },
     },
   });
 
@@ -65,22 +101,37 @@ function renderStudents(students) {
     const div =
       document.createElement('div');
 
-    div.style.marginBottom = '10px';
+    div.classList.add('student-item');
 
     div.innerHTML = `
-      <p>
-        <strong>${student.name}</strong>
-        - ${student.subject}
-        - ${student.marks}
 
-        <button onclick="updateStudent('${student._id}')">
+      <div class="student-details">
+
+        <strong>${student.name}</strong>
+
+        • ${student.subject}
+
+        • ${student.marks} Marks
+
+      </div>
+
+      <div class="actions">
+
+        <button
+          class="update-btn"
+          onclick="updateStudent('${student._id}')"
+        >
           Update
         </button>
 
-        <button onclick="deleteStudent('${student._id}')">
+        <button
+          class="delete-btn"
+          onclick="deleteStudent('${student._id}')"
+        >
           Delete
         </button>
-      </p>
+
+      </div>
     `;
 
     studentList.appendChild(div);

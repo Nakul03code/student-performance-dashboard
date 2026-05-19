@@ -2,55 +2,90 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <title>Student Marks Dashboard</title>
+  <title>Student Performance Dashboard</title>
 
   <link rel="stylesheet" href="style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
 
-  <h1>Student Marks Dashboard</h1>
+  <div class="container">
 
-  <form id="studentForm">
+    <div class="header">
 
-    <input
-      type="text"
-      id="name"
-      placeholder="Student Name"
-      required
-    >
+      <h1>
+        📊 Student Performance Dashboard
+      </h1>
 
-    <input
-      type="text"
-      id="subject"
-      placeholder="Subject"
-      required
-    >
+      <p>
+        NestJS + MongoDB + Chart.js Project
+      </p>
 
-    <input
-      type="number"
-      id="marks"
-      placeholder="Marks"
-      required
-    >
+    </div>
 
-    <button type="submit">
-      Add Student
-    </button>
+    <div class="card form-card">
 
-  </form>
+      <h2>Add Student</h2>
 
-  <canvas id="myChart"></canvas>
-  <h2>Student List</h2>
+      <form id="studentForm">
 
-<div id="studentList"></div>
+        <input
+          type="text"
+          id="name"
+          placeholder="Student Name"
+          required
+        >
+
+        <input
+          type="text"
+          id="subject"
+          placeholder="Subject"
+          required
+        >
+
+        <input
+          type="number"
+          id="marks"
+          placeholder="Marks"
+          required
+        >
+
+        <button type="submit">
+          Add Student
+        </button>
+
+      </form>
+
+    </div>
+
+    <div class="card chart-card">
+
+      <h2>Marks Visualization</h2>
+
+      <canvas id="myChart"></canvas>
+
+    </div>
+
+    <div class="card list-card">
+
+      <h2>Student Records</h2>
+
+      <div id="studentList"></div>
+
+    </div>
+
+  </div>
 
   <script src="app.js"></script>
 
